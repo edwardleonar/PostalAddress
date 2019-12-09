@@ -1,0 +1,142 @@
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX purl: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX schema: <https://schema.org/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX gs1: <https://www.gs1.org/voc/>
+PREFIX eCH: <https://example.org/eCH>
+
+# This is a sample dataset of how to represent Post Address data in RDF
+# using existing the eCH-0010 Standard. 
+
+#Defining all organizations ##########################################
+<ech_org1> a schema:Organization;
+  gs1:organizationName "Hochschule Luzern";
+  schema:contactType <ech_contact_01>;
+  schema:contactType <ech_contact_02>.
+
+<ech_org2> a schema:Organization;
+  gs1:organizationName "Swisscom (Schweiz) AG";
+  schema:contactType <ech_contact_03>;
+  schema:contactType <ech_contact_04>;
+  schema:contactType <ech_contact_05>.
+
+<ech_org3> a schema:Organization;
+  gs1:organizationName "Douglas College";
+  schema:contactType <ech_contact_06>.
+
+#Defining all Contact Points ##########################################
+<ech_contact_01> a schema:ContactPoint;
+  schema:department "Wirtschaft";
+  schema:contactType "Leiter Master (MSc) in Applied Information and Data Science";
+  schema:contactPoint <ech_ID_101>;
+  eCH:postalAddress <ech_postal_Id_1>.
+
+<ech_contact_02> a schema:ContactPoint;
+  schema:department "Wirtschaft";
+  schema:contactType "Project Head Marketing and Communications";
+  schema:contactPoint <ech_ID_102>;
+  eCH:postalAddress <ech_postal_Id_2>.
+
+<ech_contact_03> a schema:ContactPoint;
+  schema:department "Supply Chaing Management & Corporate Real Estate Management";
+  schema:contactType "Purchasing External Workforce & Enabling";
+  schema:contactPoint <ech_ID_103>;
+  eCH:postalAddress <ech_postal_Id_3>.
+
+<ech_contact_04> a schema:ContactPoint;
+  schema:department "Data, Analytics & AI";
+  schema:contactType "Director of Research";
+  schema:contactPoint <ech_ID_104>;
+  eCH:postalAddress <ech_postal_Id_4>.
+
+<ech_contact_05> a schema:ContactPoint;
+  schema:department "Identity & Access Management";
+  schema:contactType "Project Manager I";
+  schema:contactPoint <ech_ID_105>;
+  eCH:postalAddress <ech_postal_Id_5>.
+
+<ech_contact_06> a schema:ContactPoint;
+  schema:department "Douglas College International";
+  schema:contactType "International Exchange Coordinator";
+  schema:contactPoint <ech_ID_106>;
+  eCH:postalAddress <ech_postal_Id_6>.
+
+#Defining all Persons ##########################################
+<ech_ID_101> a schema:Person;
+  eCH:formOfAddress "Herr";
+  eCH:title "Prof. Dr.";
+  schema:givenName "Andreas";
+  schema:familyName "Brandenberg".
+<ech_ID_102> a schema:Person;
+  eCH:formOfAddress "Frau";
+  schema:givenName "Monika";
+  schema:familyName "Arnold".
+<ech_ID_103> a schema:Person;
+  eCH:formOfAddress "Frau";
+  schema:givenName "Daniela";
+  schema:familyName "Kiener".
+<ech_ID_104> a schema:Person;
+  eCH:formOfAddress "Herr";
+  schema:givenName "Claudiu";
+  schema:familyName "Musat".
+<ech_ID_105> a schema:Person;
+  eCH:formOfAddress "Herr";
+  schema:givenName "Hans";
+  schema:familyName "Ruettimann".
+<ech_ID_106> a schema:Person;
+  eCH:formOfAddress "Frau";
+  eCH:title "MEd";
+  schema:givenName "Jessica";
+  schema:familyName "Harrison".
+
+#Defining all Postal Addresses ##########################################
+<ech_postal_Id_1> a schema:PostalAddress;
+  schema:streetAddress "Zentralstrasse 9";
+  schema:addressLocality "Luzern";
+  schema:postalCode "6002";
+  schema:addressRegion "LU";
+  eCH:addressLine1 "6002";
+  eCH:addressLine2 "6002";
+  eCH:dwellingNumber "Raum Z425";
+  schema:postOfficeBoxNumber "Postfach 2940";
+  dbo:country "Switzerland".
+
+<ech_postal_Id_2> a schema:PostalAddress;
+  schema:streetAddress "Werftestrasse 4";
+  schema:addressLocality "Luzern";
+  schema:postalCode "6002";
+  schema:addressRegion "LU";
+  schema:postOfficeBoxNumber "Postfach 2969";
+  dbo:country "Switzerland".
+
+<ech_postal_Id_3> a schema:PostalAddress;
+  schema:streetAddress "Alte Tiefenaustrasse 6";
+  schema:addressLocality "Worblaufen";
+  schema:postalCode "3048";
+  schema:addressRegion "BE";
+  dbo:country "Switzerland".
+
+<ech_postal_Id_4> a schema:PostalAddress;
+  schema:streetAddress "Route Cantonale";
+  schema:addressLocality "Lausanne";
+  schema:postalCode "1015";
+  schema:addressRegion "VD";
+  eCH:addressLine1 "EPFL Parc Scientifique";
+  eCH:addressLine2 "Building F";
+  eCH:dwellingNumber "3rd Floor";
+  dbo:country "Switzerland".
+
+<ech_postal_Id_5> a schema:PostalAddress;
+  schema:streetAddress "Waldeggstrasse 51";
+  schema:addressLocality "Liebefeld";
+  schema:postalCode "3097";
+  schema:addressRegion "BE";
+  dbo:country "Switzerland".
+
+<ech_postal_Id_6> a schema:PostalAddress;
+  schema:streetAddress "700 Royal Ave";
+  schema:addressLocality "New Westminster";
+  schema:postalCode "BC V3M 5Z5";
+  schema:addressRegion "British Columbia";
+  dbo:country "Canada".
