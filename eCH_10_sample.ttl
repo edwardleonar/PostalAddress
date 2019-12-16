@@ -1,3 +1,4 @@
+BASE <http://ld.zazuko.com/ech/10/>
 PREFIX dbo: <http://dbpedia.org/ontology/>
 PREFIX purl: <http://purl.org/dc/terms/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
